@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="blank">
+    <img src="assets/img/logo2.jpg">
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <p>Clique nos botões abaixo para gerar uma senha de acordo com o tipo de atendimento desejado.</p>
+</ion-content>
+
+<ion-card-header>
+  <ion-input readonly="true" label="Sua senha é: "></ion-input>
+  <script type="any/typescript" src="src/app/services/senhas.service.ts"></script>
+</ion-card-header>
+
+<ion-card>
+<ion-card-content>
+  <ion-button expand="block" (click)="senhasService.novaSenha ('SG') ">Senha Geral</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha ('SP') ">Senha Prioritária</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SE') ">Senha Exame</ion-button>
+</ion-card-content>
+</ion-card>
+
