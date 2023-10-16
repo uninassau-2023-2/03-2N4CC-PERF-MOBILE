@@ -9,5 +9,9 @@
 
 ## 2023-10-16 - Apresentação
 
-* A pasta do código está vazia
-* Não houve alunos na apresentação
+* Foi enviado código de uma página HTML, precisa ser um app móvel
+* Existe aba com botões para geração de senha
+* A página do atendente funciona, entretanto não segue a regra de prioridade
+* Não há página de relatório
+* Presentes na apresentação:
+    * Alex Henrique conceição da silva - 01540550
