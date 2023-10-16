@@ -13,5 +13,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-button expand="block" (click)="chamaSenhas()">Chamar senha</ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let senhaChamada of senhasChamadas;">
+        <ion-item>{{senhaChamada}}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

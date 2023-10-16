@@ -9,8 +9,10 @@ export class SenhasService {
   public senhasPrior: number = 0;
   public senhasExame: number = 0;
   public senhasTotal: number = 0;
+  public senhasArray: any = [];
+
   constructor() { }
-  somaGeral() { 
+  somaGeral() {
     this.senhasGeral++;
     this.senhasTotal++;
   }
@@ -18,21 +20,23 @@ export class SenhasService {
     this.senhasPrior++;
     this.senhasTotal++;
   }
-  somaExame() { 
+  somaExame() {
     this.senhasExame++;
     this.senhasTotal++;
   }
   novaSenha (tipoSenha: string = ''){
-    if (tipoSenha == 'SG') { 
+    if (tipoSenha == 'SG') {
       this.somaGeral();
       this.inputNovaSenha =
-        new Date().getFullYear().toString().substring (2, 4) + 
-        new Date().getMonth().toString().padStart (2, '0') + 
-        new Date().getDate().toString().padStart (2, '0') +
-    '-' +
-    tipoSenha
-    + 
-    this.senhasGeral
+        new Date().getFullYear().toString().substring(2, 4) +
+        new Date().getMonth().toString().padStart(2, '0') +
+        new Date().getDate().toString().padStart(2, '0') +
+        '-' +
+        tipoSenha
+        +
+        this.senhasGeral;
+      this.senhasArray.push(this.inputNovaSenha);
+      console.log(this.senhasArray)
     /* +
     (this.senhasArray['SG'].length + 1).toString().padStart (2, '0');
     this.senhasArray.SG.push(this.inputNovaSenha);
@@ -40,11 +44,11 @@ export class SenhasService {
     }else if (tipoSenha == 'SP') {
     this.somaPrior();
     this.inputNovaSenha =
-      new Date().getFullYear().toString().substring (2, 4) + 
+      new Date().getFullYear().toString().substring (2, 4) +
       new Date().getMonth().toString().padStart (2, '0') +
       new Date().getDate().toString().padStart (2, '0') +
       '-' +
-    tipoSenha 
+    tipoSenha
     + this.senhasPrior
     /*+
     (this.senhasArray['SP'].length + 1).toString().padStart (2, '0');
@@ -57,10 +61,10 @@ export class SenhasService {
     new Date().getMonth().toString().padStart (2, '0') +
     new Date().getDate().toString().padStart (2, '0') +
     '-' +
-    tipoSenha 
+    tipoSenha
     + this.senhasExame
     /*+
-    (this.senhasArray['SE'].length + 1).toString().padStart (2, '0'); 
+    (this.senhasArray['SE'].length + 1).toString().padStart (2, '0');
     this.senhasArray.SE.push (this.inputNovaSenha);
     console.log (this.senhasArray);*/
     }
