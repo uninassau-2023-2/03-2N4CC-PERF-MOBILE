@@ -9,4 +9,9 @@
 
 ## 2023-10-16 - Apresentação
 
-* JOÃO RICARDO DE OLIVEIRA AGOSTINHO – 01600903
+* Foi enviado código parcial
+* Existe aba com botões para geração de senha
+* Não há página do atendente
+* Página do relatório está feita
+* Presentes na apresentação:
+    * JOÃO RICARDO DE OLIVEIRA AGOSTINHO – 01600903

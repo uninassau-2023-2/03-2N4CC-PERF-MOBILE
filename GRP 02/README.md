@@ -5,7 +5,7 @@
 * Raysa Gomes do Nascimento/01565923;
 * Vinícius Praxedes Melo/ 01525580.
 
-## 2023-10-16
+## 2023-10-16 - Apresentação
 
-A pasta do código está vazia
-Não houve ninguém na apresentação
+* A pasta do código está vazia
+* Não houve alunos na apresentação
