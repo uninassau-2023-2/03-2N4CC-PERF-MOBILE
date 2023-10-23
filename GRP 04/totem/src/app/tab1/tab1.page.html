@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Tab 1 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content align="center">
+  <ion-card>
+    <ion-card-header> Senhas </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Senha:</ion-label>
+          <ion-input
+            readonly="true"
+            [(ngModel)]="senhasService.inputNovaSenha"
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button
+    expand="center"
+    (click)="senhasService.novaSenha('SG')"
+    class="ion-button-center"
+    grid-column="1"
+    margin-bottom="10px"
+    >Senha Geral</ion-button
+  >
+  <ion-button
+    expand="center"
+    (click)="senhasService.novaSenha('SP')"
+    class="ion-button-center"
+    grid-column="2"
+    >Senhas Prioritárias</ion-button
+  >
+  <ion-button
+    expand="center"
+    (click)="senhasService.novaSenha('SE')"
+    class="ion-button-center"
+    grid-column="3"
+    >Senha Exame</ion-button
+  >
+</ion-content>
