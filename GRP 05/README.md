@@ -15,3 +15,8 @@
 * Página do relatório está feita
 * Presentes na apresentação:
     * JOÃO RICARDO DE OLIVEIRA AGOSTINHO – 01600903
+
+## 2023-10-23 - Apresentação
+
+* JOÃO RICARDO DE OLIVEIRA AGOSTINHO – 01600903
+* RAMON GABRIEL BATISTA CHAVES – 01501661
