@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const SetMedtoken = async (dados: TokenData) => {
   try {
-    const response = await axios.post('http://192.168.1.16:3333/', dados)
+    const response = await axios.post('http://172.17.0.1:3333/', dados)
     const responseData = await response.data // change response.json() to response.data
     return responseData
   } catch (err) {
