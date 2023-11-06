@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, TextInput, View, Button, Image } from "react-native";
 import axios from "axios";
@@ -11,7 +11,7 @@ export default function App() {
     logradouro: string;
     localidade: string;
     uf: string;
-  } | null>({ bairro: "", logradouro: "", localidade: "", uf: "" });
+  } | null>();
 
   const [pokemonData, setPokemonData] = useState<{
     name: string | null;
@@ -25,28 +25,30 @@ export default function App() {
     return Math.floor(Math.random() * 100) + 1; // Gera um número aleatório entre 1 e 100
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
+  const fetchData = async () => {
+    try {
       if (activate && !dataCep) {
         const response = await axios.get(
           `https://viacep.com.br/ws/${cep}/json/`
         );
         setDataCep(response.data);
       }
-
-      if (parseInt(cep) === 7) {
+  
+      if (parseInt(cep) > 6) {
         const randomPokemonId = getRandomPokemonId();
         const response = await axios.get(
           `https://pokeapi.co/api/v2/pokemon/${randomPokemonId}`
         );
         setPokemonData(response.data);
       }
-    };
-
-    fetchData();
-  }, [activate, dataCep, cep]);
+    } catch (error) {
+      console.error("Erro na solicitação à API:", error);
+    }
+  };
+  
 
   const handleButtonPress = () => {
+    fetchData()
     if (!activate) {
       setActivate(true);
     }
@@ -73,11 +75,23 @@ export default function App() {
       )}
       {activate && pokemonData && (
         <View>
-          <Image source={{ uri: pokemonData.sprites.front_default }} />
+          <Image
+            source={{ uri: pokemonData.sprites.front_default }}
+            style={styles.pokemonImage}
+          />
           <Text>{pokemonData.name}</Text>
-          <Text>Abilities: {pokemonData.abilities?.join(", ") || "N/A"}</Text>
-          <Text>Height: {pokemonData.height || "N/A"}</Text>
-          <Text>Weight: {pokemonData.weight || "N/A"}</Text>
+          <Text>
+            Number of Abilities:{" "}
+            {pokemonData.abilities ? pokemonData.abilities.length : 0}
+          </Text>
+          <Text>
+            Height:{" "}
+            {pokemonData.height ? `${pokemonData.height / 10} m` : "N/A"}
+          </Text>
+          <Text>
+            Weight:{" "}
+            {pokemonData.weight ? `${pokemonData.weight / 10} kg` : "N/A"}
+          </Text>
         </View>
       )}
     </View>
@@ -97,5 +111,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "grey",
     paddingHorizontal: 30,
+  },
+
+  pokemonImage: {
+    width: 200,
+    height: 200,
+    resizeMode: "contain",
   },
 });
