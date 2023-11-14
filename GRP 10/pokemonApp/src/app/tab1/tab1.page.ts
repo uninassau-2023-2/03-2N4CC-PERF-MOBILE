@@ -17,7 +17,7 @@ export class Tab1Page {
   };
   pokemonDetails: any = {};
   total: number = 0;
-  totalAbilities: number = 0; // Adicione esta propriedade
+  totalAbilities: number = 0;
 
   constructor(
     private pokeAPIService: PokeAPIService,
@@ -36,8 +36,8 @@ export class Tab1Page {
     this.pokeAPIService.getPokeApiService()
       .subscribe((pokemonDetails) => {
         this.pokemonDetails = pokemonDetails;
-        this.calculateTotal(); // Calcule o total de height e weight
-        this.calculateTotalAbilities(); // Calcule o total de abilities
+        this.calculateTotal();
+        this.calculateTotalAbilities();
       });
   }
 
@@ -48,5 +48,7 @@ export class Tab1Page {
   calculateTotalAbilities() {
     this.totalAbilities = this.pokemonDetails.abilities.length;
   }
+
+
 
 }
