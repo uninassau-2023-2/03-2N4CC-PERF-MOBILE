@@ -1,5 +1,7 @@
+import { SenhasService } from './../services/senhas.service';
 import { Component } from '@angular/core';
-import { SenhasService } from '../services/senhas.service'; // Importe o serviço SenhasService
+import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -7,12 +9,66 @@ import { SenhasService } from '../services/senhas.service'; // Importe o serviç
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-  //inputNovaSenha: string = '';
+  inputNovaSenha: string = '';
+  ultimasSenhasChamadas: string[] = []; 
 
-  // Crie uma variável pública para conter uma instância do serviço SenhasService
-  constructor() {
-    // Aqui você pode acessar o serviço SenhasService através da variável senhasService
+
+  constructor(
+    private senhasService: SenhasService,
+    private alertController: AlertController,
+    private navCtrl: NavController // Injete o NavController
+  ) {}
+
+  async mostrarSenha(tipoSenha: string) {
+    this.senhasService.novaSenha(tipoSenha);
+    const numAno = new Date().getFullYear().toString().substring(2, 4);
+    const numMes = (new Date().getMonth() + 1).toString().padStart(2, '0');
+    const numDia = new Date().getDate().toString().padStart(2, '0');
+    const numTipo = tipoSenha;
+    const sequencia = (this.senhasService.senhasArray[tipoSenha].length + 1).toString().padStart(2, '0');
+    const numSenha = `${numAno}${numMes}${numDia}-${numTipo}${sequencia}`;
+
+    switch(tipoSenha) {
+      case 'SG': { this.senhasService.senhasArray['SG'].unshift(numSenha) 
+      break;
+    }
+      case 'SP': {this.senhasService.senhasArray['SP'].unshift(numSenha)
+      break;
+    }
+      case 'SE': {this.senhasService.senhasArray['SE'].unshift(numSenha)
+      break;
+    }
+    }
+    console.log(this.senhasService.senhasArray)
+
+    const senhasSG = this.senhasService.getSenhasSG();
+    const senhasSP = this.senhasService.getSenhasSP();
+    const senhasSE = this.senhasService.getSenhasSE();
+
+   
+    // this.navCtrl.navigateForward('/tabs/tab3', {
+    //   queryParams: {
+    //     senhasSG: senhasSG,
+    //     senhasSP: senhasSP,
+    //     senhasSE: senhasSE,
+    //   },
+    // });
+
+    this.inputNovaSenha = numSenha;
+    console.log(senhasSG)
+
+     // Adicione a senha chamada recentemente à lista
+     this.senhasService.adicionarSenhaChamada(numSenha);
+
+     // Obtenha as 5 últimas senhas chamadas
+     this.ultimasSenhasChamadas = this.senhasService.getSenhasChamadas();
+ 
+    const alert = await this.alertController.create({
+      header: 'Informações da Senha',
+      message: `Número da senha: ${numSenha}`,
+      buttons: ['Imprima'],
+    });
+
+    await alert.present();
   }
-
-  // Outros métodos e lógica da classe Tab1Page
 }

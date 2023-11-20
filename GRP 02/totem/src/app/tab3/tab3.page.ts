@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SenhasService } from '../services/senhas.service'; // Importe o serviço SenhasService
+import { SenhasService } from '../services/senhas.service';
 
 @Component({
   selector: 'app-tab3',
@@ -7,11 +7,34 @@ import { SenhasService } from '../services/senhas.service'; // Importe o serviç
   styleUrls: ['tab3.page.scss'],
 })
 export class Tab3Page {
-
-  // Crie uma variável pública para conter uma instância do serviço SenhasService
+  senhasEmitidas: number;
+  senhasAtendidas: number;
+  senhasGeral: number;
+  senhasPrioritarias: number;
+  senhasExame: number;
+  relatorioDetalhado: any[];
+  relatorioTM: number;
+  senhasSelecionadas: string[];
+  relatorioDiario: any; 
+  
   constructor(public senhasService: SenhasService) {
-    // Aqui você pode acessar o serviço SenhasService através da variável senhasService
+    this.senhasEmitidas = senhasService.getSenhasTotal();
+    this.senhasAtendidas = senhasService.senhasSelecionadas.length;
+    this.senhasGeral = senhasService.getSenhasSG();
+    this.senhasPrioritarias = senhasService.getSenhasSP();
+    this.senhasExame = senhasService.getSenhasSE();
+    this.relatorioDetalhado = senhasService.getRelatorioDetalhado();
+    this.relatorioTM = senhasService.getRelatorioTM();
+    this.senhasSelecionadas = senhasService.senhasSelecionadas;
+
+    
+    this.gerarRelatorioDiario();
   }
 
-  // Outros métodos e lógica da classe Tab3Page
+  gerarRelatorioDiario() {
+    
+    this.relatorioDiario = this.senhasService.getRelatorioDiario();
+  }
+
+ 
 }
