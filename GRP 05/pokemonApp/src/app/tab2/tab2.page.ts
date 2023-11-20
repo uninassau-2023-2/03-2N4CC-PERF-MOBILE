@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PokeApiService } from '../services/poke-api.service';
 import { PhotoService } from '../services/photo.service';
 
@@ -7,7 +7,7 @@ import { PhotoService } from '../services/photo.service';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page implements OnInit{
+export class Tab2Page {
   pokemonAdversary:any={
     name:'',
     image:'',
@@ -23,8 +23,7 @@ export class Tab2Page implements OnInit{
     private pokeApiService:PokeApiService,
     public photoService:PhotoService
   ){ }
-  ngOnInit(): void {
-  }
+
 
   buscarPokemon(){
     this.pokeApiService.getPokeApiService()
