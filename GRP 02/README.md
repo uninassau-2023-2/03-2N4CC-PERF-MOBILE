@@ -5,6 +5,12 @@
 * Raysa Gomes do Nascimento/01565923;
 * Vinícius Praxedes Melo/ 01525580.
 
+## 2023-11-20 - Reenvio tardio da atividade do Totem
+
+* Enviado compactado pelo Teams depois de correções.
+  * Necessários poucos ajustes para funcionar
+  * Não foram implementados todos os requisitos
+
 ## 2023-11-17 - Avaliação tardia
 
 * Projeto foi enviado compactado pelo Teams
