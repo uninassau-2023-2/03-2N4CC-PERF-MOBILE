@@ -7,6 +7,11 @@
 * RAMON GABRIEL BATISTA CHAVES – 01501661
 * RICARDO GEORGE ALBUQUERQUE MOURA – 01536175
 
+## 2023-11-21
+
+* Perfeito João Ricardo!
+* Desenvolvido por completo até a lista 7
+
 ## Apresentação - 2023-11-20
 
 * Projeto caminhando bem
