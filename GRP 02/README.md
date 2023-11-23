@@ -5,6 +5,11 @@
 * Raysa Gomes do Nascimento/01565923;
 * Vinícius Praxedes Melo/ 01525580.
 
+## 2023-11-23
+
+* Enviado pelo telegram
+* Desenvolvido até a lista 5
+
 ## 2023-11-20 - Reenvio tardio da atividade do Totem
 
 * Enviado compactado pelo Teams depois de correções.
