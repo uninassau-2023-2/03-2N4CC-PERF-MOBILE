@@ -6,7 +6,7 @@
 * Eduarda Martins do Nascimento - 01525081
 * Jonas Ferreira da Silva - 01063866
 
-## Apresentação - 2023-11-20
+## 2023-11-20
 
 * Código concluído até a atividade 6
 
