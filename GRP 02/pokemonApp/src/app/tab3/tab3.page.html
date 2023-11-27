@@ -13,5 +13,32 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+ <ion-grid> 
+  <ion-row>
+    <ion-col  size='4' *ngFor="let userpokemon of pokemons" ><ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-row>{{userpokemon.name| uppercase}}</ion-row>
+          <ion-img alt="Pokemon" src="{{userpokemon.image}}">
+          </ion-img>
+        </ion-card-title>
+      </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label color="success">Vitórias: {{userpokemon.vitorias}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label color="danger">Derrotas: {{userpokemon.derrotas}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label color="warning">Empates: {{userpokemon.empates}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card></ion-col>
+  </ion-row>
+</ion-grid>  
 </ion-content>
+
+ 
