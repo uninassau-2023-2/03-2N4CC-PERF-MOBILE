@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Pokedex </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar
+    (search)="pesquisar($event)"
+    [(ngModel)]="valorSearch"
+  ></ion-searchbar>
+
+  <ion-list>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let pokemon of pokemons">
+          <ion-card>
+            <ion-card-header [class]="pokemon.types[0].type.name + 'T'" (click)="pokeFraqueza(pokemon.types)">
+              {{ pokemon.name }}
+            </ion-card-header>
+  
+            <ion-card-content [class]="'ion-padding ' + 'accordion ' + pokemon.types[0].type.name + 'T' ">
+              <img src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}"/>
+
+              <div>
+                <ion-label color="success">Vitórias:0</ion-label>
+              </div>
+  
+              <div>
+                <ion-label color="danger">Derrotas:0</ion-label>
+              </div>
+  
+              <div>
+                <ion-label color="warning">Empates:0</ion-label>
+              </div>
+
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
+  
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="crescent"
+      loadingText="Carregando..."
+    >
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>
