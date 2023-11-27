@@ -6,6 +6,10 @@
 * Raysa Gomes do Nascimento - 01565923;
 * Vinícius Praxedes Melo - 01525580.
 
+## 2023-11-27
+
+* Desenvolvido até a lista 7
+
 ## 2023-11-23
 
 * Enviado pelo telegram
