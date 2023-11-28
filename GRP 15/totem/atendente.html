@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela do Atendente</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="imagens/Dapino-Medical-Hospital.ico" type="image/x-icon">
+
+</head>
+<body>
+  <section id="sectionAtendente">
+    <h1>Tela do Atendente</h1>
+    <div id="tela">
+        <div id="proximas-senhas">
+          <h2>Proximas Senhas:</h2>
+          <hr>
+          <p id="chamados"></p>
+          <ul id="chamados">
+            <!-- Os chamados serão adicionados dinamicamente aqui -->
+          </ul>
+        </div>
+    </div>
+
+      <button onclick="chamarProximaSenha()">Chamar Próxima Senha</button>
+      <button onclick="limparSenhas()">Limpar Senhas</button>
+      <br>
+      <a href="index.html" id="mudarTela">Voltar para o Totem</a>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    exibirChamados(); // Chama a função para exibir os chamados ao carregar a página
+    atualizarUltimaSenhaChamada(); // Chama a função para exibir a última senha chamada
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-input readonly="true" label="Senha Cliênte: " [(ngModel)]="senhasService.inputNovaSenha"></ion-input>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-button expand="block" (click)="senhasService.novaSenha('SG')">Guichê 1</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SP')">Guichê 2</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SE')">Guichê 3</ion-button>
+</ion-content>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela do Paciente</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="imagens/Dapino-Medical-Hospital.ico" type="image/x-icon">
+</head>
+
+<body>
+  <section>
+    <h1>Totem de Emissão de Senhas</h1>
+
+    <div id="totem">
+      <button onclick="emitirSenha('SP')">Emitir Senha Prioritária (SP)</button>
+      <button onclick="emitirSenha('SG')">Emitir Senha Geral (SG)</button>
+      <button onclick="emitirSenha('SE')">Emitir Senha de Exames (SE)</button>
+    </div>
+
+    <a href="atendente.html" id="mudarTela">Tela do Atendente</a>
+
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    exibirChamados(); // Chama a função para exibir os chamados ao carregar a página
+  </script>
+</body>
+</html>

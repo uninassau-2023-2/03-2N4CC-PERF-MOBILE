@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-input readonly="true" label="Senha Chamada: " [(ngModel)]="senhasService.inputNovaSenha"></ion-input>
+      <ion-input readonly="true" label="Guichê: " [(ngModel)]="senhasService.inputNovaSenha"></ion-input>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-input readonly="true" label="Sua Senha: " [(ngModel)]="senhasService.inputNovaSenha"></ion-input>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-button expand="block" (click)="senhasService.novaSenha('SG')">Senha Geral</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SP')">Senha Prioritária</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SE')">Senha Exame</ion-button>
+</ion-content>

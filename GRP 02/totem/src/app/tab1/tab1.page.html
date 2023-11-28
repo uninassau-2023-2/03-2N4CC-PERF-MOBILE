@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-input readonly="true" value={{inputNovaSenha}} label="Senha:"></ion-input>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" (click)="mostrarSenha('SG')">Senha Geral</ion-button>
+      <ion-button expand="block" (click)="mostrarSenha('SP')">Senha Prioritária</ion-button>
+      <ion-button expand="block" (click)="mostrarSenha('SE')">Senha Exame</ion-button>
+    </ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let senha of ultimasSenhasChamadas">
+        Última senha chamada: {{ senha }}
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
