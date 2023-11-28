@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ViaCepService } from './via-cep.service';
+import { ViaCEPService } from './via-cep.service';
 
-describe('ViaCepService', () => {
-  let service: ViaCepService;
+describe('ViaCEPService', () => {
+  let service: ViaCEPService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ViaCepService);
+    service = TestBed.inject(ViaCEPService);
   });
 
   it('should be created', () => {
